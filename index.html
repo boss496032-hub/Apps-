@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malik Nasir Sangha - Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#f1f3f6;display:flex;min-height:100vh}
+a{text-decoration:none;color:inherit}
+
+/* SIDEBAR */
+.sidebar{width:260px;background:#111827;color:#fff;padding:24px 18px;position:fixed;height:100vh;left:0;top:0;display:flex;flex-direction:column}
+.logo{font-size:22px;font-weight:800;line-height:1.2}
+.logo span{color:#facc15;font-size:14px;font-weight:600;display:block;margin-top:4px}
+.sidebar p.small{font-size:12px;color:#9ca3af;margin:18px 0 8px;letter-spacing:1px}
+.menu a{display:flex;align-items:center;gap:12px;padding:12px 12px;border-radius:10px;margin-bottom:6px;font-size:14px;color:#d1d5db}
+.menu a i{width:20px;text-align:center}
+.menu a.active,.menu a:hover{background:#facc15;color:#111827;font-weight:700}
+.profile{margin-top:auto;background:#1f2937;padding:12px;border-radius:12px;display:flex;gap:10px;align-items:center}
+.profile img{width:42px;height:42px;border-radius:50%;object-fit:cover}
+.profile b{font-size:13px}
+.profile small{font-size:11px;color:#9ca3af}
+
+/* MAIN */
+.main{margin-left:260px;flex:1;padding:22px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.topbar h1{font-size:22px}
+.topbar h1 span{font-size:13px;color:#6b7280;display:block;font-weight:400}
+.search{background:#fff;border:1px solid #e5e7eb;padding:10px 14px;border-radius:30px;display:flex;gap:8px;align-items:center;min-width:260px}
+.search input{border:none;outline:none;width:100%;font-size:13px}
+.btn{background:#111827;color:#fff;padding:10px 18px;border-radius:30px;font-size:13px;font-weight:600;border:none;cursor:pointer}
+.btn-yellow{background:#facc15;color:#111827}
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:20px 0}
+.card{background:#fff;padding:18px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.05)}
+.card .icon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:18px;margin-bottom:12px}
+.card h3{font-size:24px}
+.card p{font-size:12px;color:#6b7280}
+.green .icon{background:#dcfce7;color:#16a34a}
+.blue .icon{background:#dbeafe;color:#2563eb}
+.orange .icon{background:#ffedd5;color:#ea580c}
+.purple .icon{background:#ede9fe;color:#7c3aed}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:1.6fr 1fr;gap:16px}
+.box{background:#fff;border-radius:16px;padding:18px;box-shadow:0 4px 20px rgba(0,0,0,.05)}
+.box h2{font-size:16px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center}
+.box h2 a{font-size:12px;color:#2563eb}
+
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;padding:10px;color:#6b7280;font-size:11px;letter-spacing:.5px}
+td{padding:12px 10px;border-top:1px solid #f3f4f6}
+.badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700}
+.confirmed{background:#dcfce7;color:#166534}
+.pending{background:#fef9c3;color:#854d0e}
+.cancelled{background:#fee2e2;color:#991b1b}
+.car-row{display:flex;align-items:center;gap:10px}
+.car-row img{width:52px;height:34px;object-fit:cover;border-radius:8px}
+.progress{height:8px;background:#e5e7eb;border-radius:10px;overflow:hidden;margin:8px 0}
+.progress div{height:100%;background:#facc15}
+.list-item{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:13px}
+
+@media(max-width:900px){
+  .sidebar{display:none}
+  .main{margin-left:0}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div class="logo">🚐 MALIK NASIR<br>SANGHA <span>Car Rental • Gujranwala</span></div>
+  <p class="small">MAIN MENU</p>
+  <div class="menu">
+    <a href="#" class="active"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+    <a href="#"><i class="fa-solid fa-calendar-check"></i> Bookings</a>
+    <a href="#"><i class="fa-solid fa-car"></i> Meri Gariyan</a>
+    <a href="#"><i class="fa-solid fa-users"></i> Customers</a>
+    <a href="#"><i class="fa-solid fa-wallet"></i> Payments</a>
+    <a href="#"><i class="fa-solid fa-chart-line"></i> Reports</a>
+    <a href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+  </div>
+  <div class="profile">
+    <img src="https://i.pravatar.cc/100?img=12" alt="profile">
+    <div><b>Malik Nasir Sangha</b><br><small>Naseer Pur Kalan, Ghari Kala</small></div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="topbar">
+    <h1>Assalam-o-Alaikum, Nasir 👋 <span>Aaj ki bookings aur earning yahan se dekhen</span></h1>
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+      <div class="search"><i class="fa-solid fa-magnifying-glass"></i><input placeholder="Booking, customer search karen..."></div>
+      <button class="btn btn-yellow" onclick="addBooking()">+ New Booking</button>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="cards">
+    <div class="card green"><div class="icon"><i class="fa-solid fa-sack-dollar"></i></div><p>Aaj Ki Earning</p><h3>Rs 18,500</h3><p style="color:#16a34a">▲ 12% kal se zyada</p></div>
+    <div class="card blue"><div class="icon"><i class="fa-solid fa-calendar"></i></div><p>Total Bookings</p><h3>142</h3><p>Is mahine: 28 bookings</p></div>
+    <div class="card orange"><div class="icon"><i class="fa-solid fa-car"></i></div><p>Available Gariyan</p><h3>3 / 4</h3><p>1 gari booking par hai</p></div>
+    <div class="card purple"><div class="icon"><i class="fa-solid fa-users"></i></div><p>Total Customers</p><h3>89</h3><p>7-8 sawariyon wali gari best hai</p></div>
+  </div>
+
+  <div class="grid">
+    <!-- BOOKINGS TABLE -->
+    <div class="box">
+      <h2>Recent Bookings <a href="#">View All →</a></h2>
+      <table>
+        <tr><th>CUSTOMER</th><th>ROUTE</th><th>DATE</th><th>AMOUNT</th><th>STATUS</th></tr>
+        <tr><td><b>Ahmed Raza</b><br><small>0300-1234567</small></td><td>Gujranwala → Murree</td><td>7 Nov 2026</td><td><b>Rs 12,000</b></td><td><span class="badge confirmed">Confirmed</span></td></tr>
+        <tr><td><b>Bilal Khan</b><br><small>0321-9876543</small></td><td>Ghari Kala → Lahore</td><td>8 Nov 2026</td><td><b>Rs 6,500</b></td><td><span class="badge pending">Pending</span></td></tr>
+        <tr><td><b>Usman Ghani</b><br><small>0333-4567890</small></td><td>Naseer Pur → Islamabad</td><td>9 Nov 2026</td><td><b>Rs 15,000</b></td><td><span class="badge confirmed">Confirmed</span></td></tr>
+        <tr><td><b>Ali Hassan</b><br><small>0348-5620342</small></td><td>Gujranwala → Naran</td><td>10 Nov 2026</td><td><b>Rs 22,000</b></td><td><span class="badge cancelled">Cancelled</span></td></tr>
+      </table>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="box">
+        <h2>Meri Gariyan</h2>
+        <div class="car-row"><img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=200"><div><b>Black Van - AE 2947</b><br><small>7-8 Sawari • AC • Kushada Seats</small></div><span class="badge confirmed" style="margin-left:auto">Available</span></div>
+        <div class="progress"><div style="width:85%"></div></div>
+        <small>Is mahine 85% booked</small>
+        <div class="car-row" style="margin-top:14px"><img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=200"><div><b>Black Van 2</b><br><small>Shadi / Baraat ke liye best</small></div><span class="badge pending" style="margin-left:auto">On Trip</span></div>
+      </div>
+
+      <div class="box">
+        <h2>Quick Actions</h2>
+        <div class="list-item">📞 <b>Call Customer</b> <span>0307 064 7564</span></div>
+        <div class="list-item">💬 <b>WhatsApp Booking</b> <span>0348 562 0342</span></div>
+        <div class="list-item">📍 <b>Location</b> <span>Naseer Pur Kalan</span></div>
+        <div class="list-item">🕐 <b>Service</b> <span>24/7 Available</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function addBooking(){
+  let name = prompt("Customer ka naam likhen:");
+  let route = prompt("Kahan se kahan tak?");
+  if(name && route){
+    alert("✅ Booking save ho gayi!\nCustomer: "+name+"\nRoute: "+route+"\n\nAb aap isko table me add kar sakte hain.");
+  }
+}
+// Future me yahan Firebase / API connect ho sakta hai
+console.log("Dashboard Loaded - Malik Nasir Sangha");
+</script>
+</body>
+</html>
